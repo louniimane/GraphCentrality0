@@ -1,0 +1,9 @@
+Core contains base classes for Graph handling. *More details later*
+
+Current classes :
+
+  - Graph         Container of GraphNodes
+  - GraphNode     Container of AbstractLink
+  - AbstractLink  Base class for node linking, inherit from it to add informations
+  - SimpleLink    Simply links two graph nodes, without any informations
+  - LinkUtility   Static methods to simplify nodes linking
