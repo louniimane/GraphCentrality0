@@ -8,23 +8,25 @@ import java.util.Vector;
  * @brief Container of TNodeType, acts as a container of Nodes. Provides
  * few methods to handle node creation
  */
-public class Graph
+public class Graph<NodeType 
+extends AbstractNode<AbstractLink<NodeType>>,
+		LinkType extends AbstractLink<NodeType>>
 {
-	protected Vector<GraphNode> Nodes;
+	protected Vector<NodeType> Nodes;
 	
 	/**
 	 * Default constructor
 	 */
 	public Graph()
 	{
-		Nodes = new Vector<GraphNode>();
+		Nodes = new Vector<NodeType>();
 	}
 	
 	/**
 	 * Add a node
 	 * @param InNode Node to add
 	 */
-	public void AddNode(GraphNode InNode)
+	public void AddNode(NodeType InNode)
 	{
 		Nodes.add(InNode);
 	}
@@ -33,7 +35,7 @@ public class Graph
 	 * Remove a node
 	 * @param InNode Node to remove
 	 */
-	public void RemoveNode(GraphNode InNode)
+	public void RemoveNode(NodeType InNode)
 	{
 		Nodes.remove(InNode);
 	}
@@ -42,7 +44,7 @@ public class Graph
 	 * Return all nodes
 	 * @return
 	 */
-	public Vector<GraphNode> GetNodes()
+	public Vector<NodeType> GetNodes()
 	{
 		return Nodes;
 	}
@@ -52,7 +54,7 @@ public class Graph
 	 * @param InIndex
 	 * @return Can be null if index is invalid
 	 */
-	public GraphNode At(int InIndex)
+	public NodeType At(int InIndex)
 	{
 		if(InIndex < 0 || InIndex >= Nodes.size())
 			return null;

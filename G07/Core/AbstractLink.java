@@ -6,12 +6,12 @@ package Core;
  * @brief Abstract class to link two GraphNode. 
  * Inherit from it to add other information when linking two nodes
  */
-public abstract class AbstractLink 
+public abstract class AbstractLink<NodeType extends AbstractNode<AbstractLink<NodeType>>>
 {
 	/** "Parent" node */
-	protected GraphNode SourceNode;
+	protected NodeType SourceNode;
 	/** Node linked to SourceNode */
-	protected GraphNode DestinationNode;
+	protected NodeType DestinationNode;
 	
 	/**
 	 * Default constructor
@@ -23,17 +23,17 @@ public abstract class AbstractLink
 	 * @param InSourceNode
 	 * @param InDestinationNode
 	 */
-	public AbstractLink(GraphNode InSourceNode, GraphNode InDestinationNode)
+	public AbstractLink(NodeType InSourceNode, NodeType InDestinationNode)
 	{		
 		LinkNode(InSourceNode, InDestinationNode);
 	}
 	
 	/**
-	 * Links two nodes and add itself to InSourceNode
+	 * Links two nodes
 	 * @param InSourceNode Source node
 	 * @param InDestinationNode Destination node
 	 */
-	public void LinkNode(GraphNode InSourceNode, GraphNode InDestinationNode)
+	public void LinkNode(NodeType InSourceNode, NodeType InDestinationNode)
 	{
 		SourceNode = InSourceNode;
 		DestinationNode = InDestinationNode;
@@ -45,13 +45,13 @@ public abstract class AbstractLink
 	 * Return source node
 	 * @return
 	 */
-	public GraphNode GetSourceNode() { return SourceNode; }
+	public NodeType GetSourceNode() { return SourceNode; }
 	
 	/**
 	 * Return destination node
 	 * @return
 	 */
-	public GraphNode GetDestinationNode() { return SourceNode; }
+	public NodeType GetDestinationNode() { return SourceNode; }
 	
 	
 }
