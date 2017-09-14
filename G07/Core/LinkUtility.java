@@ -13,7 +13,7 @@ public class LinkUtility
 	 * @param InDestinationNode Destination node
 	 * @return Created link
 	 */
-	public static SimpleLink Link(GraphNode InSourceNode, GraphNode InDestinationNode)
+	public static SimpleLink Link(SimpleNode InSourceNode, SimpleNode InDestinationNode)
 	{
 		return new SimpleLink(InSourceNode, InDestinationNode);
 	}
