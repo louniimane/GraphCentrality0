@@ -1,2 +1,2 @@
 # GraphCentrality
-Java library to process graph centrality measures  
+Java library to process graph centrality measures
