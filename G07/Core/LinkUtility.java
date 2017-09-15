@@ -15,6 +15,9 @@ public class LinkUtility
 	 */
 	public static SimpleLink Link(SimpleNode InSourceNode, SimpleNode InDestinationNode)
 	{
-		return new SimpleLink(InSourceNode, InDestinationNode);
+		SimpleLink Output = new SimpleLink(InSourceNode, InDestinationNode);
+		InSourceNode.AddLink(Output);
+		
+		return Output;
 	}
 }

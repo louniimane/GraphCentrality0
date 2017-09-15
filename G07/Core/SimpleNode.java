@@ -1,6 +1,6 @@
 package Core;
 
-public class SimpleNode extends AbstractNode<AbstractLink<SimpleNode>>
+public class SimpleNode extends AbstractNode<SimpleLink>
 {
 	
 }

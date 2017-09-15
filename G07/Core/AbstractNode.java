@@ -5,11 +5,11 @@ import java.util.Vector;
 /**
  * 
  * @author JackassDestroyer
- * @brief Represents a node in graph
- * Acts as a container of links.
+ * Abstract class of graph nodes. Acts as a container of links.
  *  Note : Given links are not checked, you have to handle null-cases
+ * @param <LinkType> Which type of link it contains
  */
-public class AbstractNode<LinkType extends AbstractLink<?>>
+public abstract class AbstractNode<LinkType>
 {
 	/** Links to other nodes */
 	protected Vector<LinkType> Links;
@@ -50,7 +50,7 @@ public class AbstractNode<LinkType extends AbstractLink<?>>
 	}
 	
 	/**
-	 * Returns links count
+	 * Returns links count / node degree
 	 * @return
 	 */
 	public int GetLinkCount()
