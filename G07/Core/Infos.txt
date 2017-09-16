@@ -1,9 +1,54 @@
-Core contains base classes for Graph handling. *More details later*
+Core contains base classes for Graph handling.
 
 Current classes :
 
-  - Graph         Container of GraphNodes
-  - GraphNode     Container of AbstractLink
-  - AbstractLink  Base class for node linking, inherit from it to add informations
-  - SimpleLink    Simply links two graph nodes, without any informations
-  - LinkUtility   Static methods to simplify nodes linking
+  - AbstractGraph 		Generic Container of AbstractNode / AbstractLink (+child)
+  - AbstractNode  		Generic class, contains AbstractLink. Inherit from it to add new type of nodes
+  - AbstractLink  		Generic class for node linking, inherit from it to add new type of links
+  - AbstractAlgorithm	Generic class of algorithm. Contains one method to evaluate a graph
+  						 Note : Algorithm works on "type of graph", according to Node/Link template parameters
+  
+  - Link    			Simple link
+  - Node				Simple graph node
+  - Graph				Simple graph of Node/Link
+  - Algorithm			Simple algorithm for mere graph (Node/Link). Override evaluate methods as an example
+  - LinkUtility   		Static methods to simplify nodes linking
+  
+  
+  If you're heading for algorithm creation (based on mere graph), inherit Algorithm class and override
+  its method.
+  
+  To test your code, create your own main (if not already done), and follow the pattern below :
+  
+	// ----------------------------------------------------- //  
+  	// Create mere graph
+	Graph NewGraph = new Graph();
+	
+	// Add some nodes
+	NewGraph.AddNode(new Node());
+	NewGraph.AddNode(new Node());
+	NewGraph.AddNode(new Node());
+	NewGraph.AddNode(new Node());
+	
+	// Create links between them
+	NewGraph.LinkNode(0, 1);
+	NewGraph.LinkNode(1, 2);
+	NewGraph.LinkNode(1, 0);
+	NewGraph.LinkNode(2, 3);
+	
+	// Instanciate your algorithm
+	MyAlgorithm Algo = new MyAlgorithm();
+	Vector<Integer> Result = Algo.Evaluate(NewGraph);
+	
+	// And print your results
+	System.out.println(Result);
+	// ----------------------------------------------------- //
+	
+If you want to use other types of graph, create your Node/Link types (e.g. you can simply extends Node class)
+ and then create your graph : AbstractGraph<MyNode, MyLink>. Same for algorithm : AbstractAlgorithm<MyNode, MyLink>
+ 
+Node : Algorithm will work on "graph types" (Node/Link types), it means that an algorithm on a mere graph, can work
+ on a specific graph (like Weighted graph). But a specific algorithm will not work on a more generic graph. 
+For now we'll work on mere graph, so don't worry about it.
+
+

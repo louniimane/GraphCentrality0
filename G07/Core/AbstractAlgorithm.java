@@ -24,5 +24,5 @@ public abstract class AbstractAlgorithm
 	 */
 	public abstract 
 	<GraphNodeType extends NodeType, GraphLinkType extends LinkType>
-	Vector<Integer> Evaluate(Graph<GraphNodeType, GraphLinkType> InGraph);
+	Vector<Integer> Evaluate(AbstractGraph<GraphNodeType, GraphLinkType> InGraph);
 }

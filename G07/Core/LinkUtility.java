@@ -8,14 +8,14 @@ package Core;
 public class LinkUtility 
 {
 	/**
-	 * Links two graph nodes
+	 * Links two nodes
 	 * @param InSourceNode Source node
 	 * @param InDestinationNode Destination node
 	 * @return Created link
 	 */
-	public static SimpleLink Link(SimpleNode InSourceNode, SimpleNode InDestinationNode)
+	public static Link Link(Node InSourceNode, Node InDestinationNode)
 	{
-		SimpleLink Output = new SimpleLink(InSourceNode, InDestinationNode);
+		Link Output = new Link(InSourceNode, InDestinationNode);
 		InSourceNode.AddLink(Output);
 		
 		return Output;
