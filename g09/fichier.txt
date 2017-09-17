@@ -1,0 +1,1 @@
+Bonjour, je fais ce traitement sur la console LINUX et non sur ORACLE
