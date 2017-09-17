@@ -1,12 +1,13 @@
-package Core;
+package core;
 
 /**
  * 
  * @author JackassDestroyer
- * @brief Abstract class to link two GraphNode. 
+ * Abstract class to link two Nodes. 
  * Inherit from it to add other information when linking two nodes
+ * @param <NodeType> Node type to link
  */
-public abstract class AbstractLink<NodeType extends AbstractNode<AbstractLink<NodeType>>>
+public abstract class AbstractLink<NodeType>
 {
 	/** "Parent" node */
 	protected NodeType SourceNode;
@@ -37,8 +38,6 @@ public abstract class AbstractLink<NodeType extends AbstractNode<AbstractLink<No
 	{
 		SourceNode = InSourceNode;
 		DestinationNode = InDestinationNode;
-		
-		SourceNode.AddLink(this);
 	}
 		
 	/**

@@ -1,23 +1,26 @@
-package Core;
+package core;
 
 import java.util.Vector;
 
 /**
  * 
  * @author JackassDestroyer
- * @brief Container of TNodeType, acts as a container of Nodes. Provides
- * few methods to handle node creation
+ * Generic class that represents a graph. Provides few methods for node creation/linking
+ * @param <NodeType> Type of node used by graph
+ * @param <LinkType> Type of link used by graph
  */
-public class Graph<NodeType 
-extends AbstractNode<AbstractLink<NodeType>>,
-		LinkType extends AbstractLink<NodeType>>
+public abstract class AbstractGraph
+<
+	 NodeType extends AbstractNode<?>
+	,LinkType extends AbstractLink<?>
+>
 {
 	protected Vector<NodeType> Nodes;
 	
 	/**
 	 * Default constructor
 	 */
-	public Graph()
+	public AbstractGraph()
 	{
 		Nodes = new Vector<NodeType>();
 	}

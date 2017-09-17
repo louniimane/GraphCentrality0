@@ -1,32 +1,32 @@
-package Core;
+package core;
 
 import java.util.Vector;
 
 /**
  * 
  * @author JackassDestroyer
- * @brief Represents a node in graph
- * Acts as a container of links.
+ * Abstract class of graph nodes. Acts as a container of links.
  *  Note : Given links are not checked, you have to handle null-cases
+ * @param <LinkType> Which type of link it contains
  */
-public class GraphNode 
+public abstract class AbstractNode<LinkType>
 {
 	/** Links to other nodes */
-	protected Vector<AbstractLink> Links;
+	protected Vector<LinkType> Links;
 	
 	/**
 	 * Default constructor
 	 */
-	public GraphNode()
+	public AbstractNode()
 	{
-		Links = new Vector<AbstractLink>();
+		Links = new Vector<LinkType>();
 	}
 	
 	/**
 	 * Add given link to links
 	 * @param InLink link to add
 	 */
-	public void AddLink(AbstractLink InLink)
+	public void AddLink(LinkType InLink)
 	{
 		Links.add(InLink);
 	}
@@ -35,7 +35,7 @@ public class GraphNode
 	 * Add given link to links
 	 * @param InLink Link to remove
 	 */
-	public void RemoveLink(AbstractLink InLink)
+	public void RemoveLink(LinkType InLink)
 	{
 		Links.remove(InLink);
 	}
@@ -44,13 +44,13 @@ public class GraphNode
 	 * Returns links
 	 * @return
 	 */
-	public Vector<AbstractLink> GetLinks() 
+	public Vector<LinkType> GetLinks() 
 	{
 		return Links;
 	}
 	
 	/**
-	 * Returns links count
+	 * Returns links count / node degree
 	 * @return
 	 */
 	public int GetLinkCount()
