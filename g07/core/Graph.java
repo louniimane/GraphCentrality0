@@ -1,4 +1,4 @@
-package Core;
+package core;
 
 /**
  * 
@@ -11,9 +11,10 @@ public class Graph extends AbstractGraph<Node, Link>
 	 * Link two nodes (in the graph)
 	 * @param InSourceNodeIndex Source node index in graph
 	 * @param InDestinationNodeIndex Destination node index in graph
+	 * @return 
 	 */
-	public void LinkNode(int InSourceNodeIndex, int InDestinationNodeIndex)
+	public Link LinkNode(int InSourceNodeIndex, int InDestinationNodeIndex)
 	{
-		LinkUtility.Link(At(InSourceNodeIndex), At(InDestinationNodeIndex));
+		return LinkUtility.Link(At(InSourceNodeIndex), At(InDestinationNodeIndex));
 	}
 }
