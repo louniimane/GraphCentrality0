@@ -1,0 +1,3 @@
+Ceci est un fichier test,
+Veuillez être gentil avec lui
+Bonne journée!
